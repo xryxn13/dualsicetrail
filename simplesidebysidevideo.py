@@ -3,10 +3,10 @@ import streamlit as st
 def main():
     st.title("GIF Viewer")
 
-    # Display the GIF files as videos
+    # Display the GIF files using HTML
     for i in range(1, 6):
         gif_path = f"{i}.gif"
-        st.video(gif_path, format='video/gif')
+        st.markdown(f'<img src="{gif_path}" width="300">', unsafe_allow_html=True)
         st.write(f"Video {i}")
         st.write("---")
         st.write(" ")
